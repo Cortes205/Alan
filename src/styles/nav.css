@@ -1,0 +1,31 @@
+nav {
+    width: 100%;
+    background: linear-gradient(to right, rgb(41, 28, 111), rgb(15, 10, 93));
+    position: fixed;
+    top: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    z-index: 1;
+}
+#navbar {
+    list-style-type: none;
+    color: aquamarine;
+    display: inline;
+}
+#navbar li {
+    display: inline;
+    text-decoration: none;
+    margin: 3%;
+    font-size: 18px;
+    color: aquamarine;
+}
+#navbar li:hover {
+    color: rgb(0, 255, 170);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 601px) {
+    #navbar li {
+        font-size: 22px;
+    }
+} 
