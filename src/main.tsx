@@ -5,11 +5,13 @@ import Nav from "./components/nav.tsx"
 import About from "./components/about.tsx"
 import Experience from "./components/experience.tsx"
 import Projects from "./components/projects.tsx"
+import Footer from "./components/footer.tsx"
 import "./styles/header.css"
 import "./styles/nav.css"
 import "./styles/about.css"
 import "./styles/experience.css"
 import "./styles/projects.css"
+import "./styles/footer.css"
 import './styles/index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -35,5 +37,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <section id ="projectSection">
       <Projects />
     </section>
+
+    <footer>
+      <Footer />
+    </footer>
   </React.StrictMode>,
 )
