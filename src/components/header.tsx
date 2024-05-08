@@ -5,10 +5,14 @@ export default function Header() {
     return (
     <>
         <TypeAnimation
-            sequence={['~$ ', '~$ My Name is Alan.']}
+            sequence={['~$ ', 
+                        '~$ My Name is Alan.', 2000, 
+                        '~$ Me Llamo Alan.', 2000,
+                        '~$ Ang Pangalan Ko Ay Alan.', 2000,
+                        '~$ Meu Nome é Alan.', 2000]}
             wrapper="h1"
             speed={20}
-            repeat={0}
+            repeat={Infinity}
             preRenderFirstString={true}
         />
 
