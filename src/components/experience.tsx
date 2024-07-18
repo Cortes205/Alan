@@ -3,8 +3,11 @@ import {Fade, Slide} from "react-awesome-reveal";
 
 export default function Experience() {
     const skillsOne : string[] = [
-        'Communication skills', 
-        'Understanding how consumers view and use technology (self-checkout terminals)'
+        'Communication skills',
+        'Collaboration among associates from all across the store',
+        'Extensive use of POS terminals (finding bugs to report and problem solving)', 
+        'Understanding the needs of consumers as they use technology (self-checkout terminals or online ordering)',
+        'Understanding the needs of associates in their use of company technology'
     ];
 
     return(
@@ -18,7 +21,7 @@ export default function Experience() {
                             Being that I am in second year, I have
                             yet to attain on the job experience in
                             the software world. However, I have many transferable
-                            skills from the non-software work experience I have, education,
+                            skills from the non-software work experience I have, my education,
                             and personal projects.
                         </p>
                     </Fade>
@@ -26,7 +29,7 @@ export default function Experience() {
             </section>
 
             <section id="jobs">
-                {renderHeader('~$ Walmart Canada, Bowmanville - Cashier', 'h3', 60)}
+                {renderHeader('~$ Walmart Canada, Bowmanville - Cashier & Customer Service Representative', 'h3', 60)}
                 <Slide direction="up" duration={1500} triggerOnce={true}>
                     <Fade duration={2000} triggerOnce={true}>
                         <ul>

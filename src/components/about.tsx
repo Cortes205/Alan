@@ -1,5 +1,6 @@
 import renderHeader from "./helpers/renderHeader.tsx";
 import {Fade, Slide} from "react-awesome-reveal";
+import alanpic from "../assets/alan.jpg"
 
 export default function About() {
     return (
@@ -8,6 +9,7 @@ export default function About() {
 
             <Slide direction="up" duration={1500} triggerOnce={true}>
                 <Fade duration={2000} triggerOnce={true}>
+                    <img src={alanpic} alt="alancortes"></img>
                     <p>
                         Outside of my work and education, I love going to the gym,
                         cooking, and trying to learn languages. I speak English,

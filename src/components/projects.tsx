@@ -11,7 +11,7 @@ export default function Projects() {
                     <div>
                         <h3><a target="_blank" href="https://github.com/Cortes205/Currency-Conversion-App">Currency Conversion App</a></h3>
                         <img src={currencypic} alt="currency-conversion-application" />
-                        <p>Interactive command line interface application used to convert currencies with live exchange rates</p>
+                        <p>Interactive command line interface application in python used to convert currencies with live exchange rates (webscraping)</p>
                     </div>
                 </li>
             </ul>

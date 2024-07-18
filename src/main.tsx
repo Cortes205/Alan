@@ -6,6 +6,7 @@ import About from "./components/about.tsx"
 import Experience from "./components/experience.tsx"
 import Projects from "./components/projects.tsx"
 import Footer from "./components/footer.tsx"
+// import TaylorSeries from "./components/taylorSeries.tsx"
 import "./styles/header.css"
 import "./styles/nav.css"
 import "./styles/about.css"
@@ -21,6 +22,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <nav>
       <Nav />
     </nav>
+
+    {/* <section id="animation">
+      <TaylorSeries />
+    </section> */}
 
     <section id="header">
       <Header />

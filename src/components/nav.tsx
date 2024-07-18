@@ -24,6 +24,10 @@ export default function Nav() {
                     </li>
                 )}
             </ul>
+
+            {/* <ul id="socials">
+                <li>hello</li>
+            </ul> */}
         </>
     );
 }

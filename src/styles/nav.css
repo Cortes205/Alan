@@ -23,6 +23,19 @@ nav {
     color: rgb(0, 255, 170);
     cursor: pointer;
 }
+/* #socials {
+    list-style-type: none;
+    color: aquamarine;
+    display: inline;
+    text-align: right;
+}
+#socials li {
+    display: inline;
+    text-decoration: none;
+    margin: 3%;
+    font-size: 18px;
+    color: aquamarine;
+} */
 
 @media only screen and (min-width: 601px) {
     #navbar li {

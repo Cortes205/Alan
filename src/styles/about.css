@@ -1,17 +1,26 @@
 #aboutSection {
     padding: 3%;
 }
+#aboutSection img {
+    width: 45%;
+    border-radius: 7%;
+    float: right;
+    margin-bottom: 4%;
+}
 
 @media only screen and (max-width: 600px) {
     #aboutSection {
         text-align: center;
         margin-top: 5%;
     }
+    #aboutSection img {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 601px) {
     #aboutSection {
         margin-top: 2%;
-        margin-right: 40%;
+        /* margin-right: 40%; */
     }
 }
