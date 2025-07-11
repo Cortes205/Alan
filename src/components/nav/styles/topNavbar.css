@@ -1,0 +1,14 @@
+#top-nav {
+    overflow: hidden;
+    background: linear-gradient(to right, rgb(41, 28, 111), rgb(15, 10, 93));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+    #top-nav {
+        display: none;
+    }
+}

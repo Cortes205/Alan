@@ -1,0 +1,27 @@
+.about-text-container {
+    font-size: 30px;
+    text-indent: 8%;
+    width: 50%;
+    float: left;
+}
+.about-img-container {
+    width: 45%;
+    border-radius: 7%;
+    float: right;
+}
+.about-img-container img {
+    border-radius: 7%;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .about-img-container { 
+        display: none;
+    }
+    .about-text-container {
+        text-indent: 0;
+        width: 100%;
+        float: none;
+        font-size: 24px;
+    }
+}

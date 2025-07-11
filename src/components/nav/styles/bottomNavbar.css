@@ -1,0 +1,18 @@
+#bottom-nav {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #bottom-nav {
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        background: linear-gradient(to right, rgb(41, 28, 111), rgb(15, 10, 93));
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+    }
+}  
