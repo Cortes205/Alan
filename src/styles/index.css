@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(to right, rgb(41, 28, 111), rgb(15, 10, 93));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(29, 201, 201);
+    line-height: 350%;
+}
+.section-container {
+    margin-left: 3%;
+}
+.section-top {
+    height: 40px;
+}
+.footer {
+    margin-top: 75px;
+    text-align: center;
+    line-height: 25px;
+}
+
+#mail:hover {
+    color: #00ffaa;
+}
+#About {
+    padding-bottom: 50%;
+}
+#Experience {
+    padding-top: 2.5%;
+    padding-bottom: 20%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .section-container {
+        margin-left: 0;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2.25rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    #About {
+        padding-bottom: 0;
+    }
+    #Experience {
+        padding-top: 0;
+        padding-bottom: 115%;
+    }
+    .footer {
+        margin-bottom: 25%;
+    }
+}
+

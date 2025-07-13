@@ -1,0 +1,46 @@
+.side-experience-nav {
+    width: 15%;
+    float: left;
+}
+.experience-container {
+    /* border: solid; */
+    width: 67.5%;
+    float: right;
+    padding: 0;
+    margin-top: -1%;
+    padding-left: 2.5%;
+    padding-right: 10%;
+    line-height: 15px;
+}
+.experience-list {
+    text-align: left;
+    padding-top: 15px;
+    line-height: 30px;
+}
+.experience-list li {
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .side-experience-nav {
+        width: 30%;
+    }
+    .experience-container {
+        width: 65%;
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        line-height: 0;
+    }
+    .experience-container h2 {
+        font-size: 1rem;
+        line-height: 25px;
+    }
+    .experience-list {
+        padding-top: 10px;
+        line-height: 30px;
+    }
+    .experience-list li {
+        font-size: 15px;
+    }
+}
