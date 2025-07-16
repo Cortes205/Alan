@@ -1,5 +1,5 @@
-import {ThemeProvider, Tab, Tabs} from '@mui/material';
-import './styles/bottomNavbar.css';
+import {ThemeProvider, Tab, Tabs} from '@mui/material'
+import './styles/bottomNavbar.css'
 
 export default function BottomNavBar(props) {
     return (

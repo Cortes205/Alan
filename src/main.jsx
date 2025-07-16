@@ -1,24 +1,24 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import * as React from 'react';
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { createTheme, Snackbar } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import WorkIcon from '@mui/icons-material/Work';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import { Fade, Slide } from 'react-awesome-reveal';
-import './styles/index.css';
-import TopNavbar from './components/nav/topNavbar.jsx';
-import BottomNavBar from './components/nav/bottomNavbar.jsx';
-import Home from './components/tabs/home.jsx';
-import About from './components/tabs/about.jsx';
-import Experience from './components/tabs/experience.jsx';
-import Projects from './components/tabs/projects.jsx';
-import renderHeader from './components/render/header.jsx';
+import '@fontsource/roboto/300.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
+import * as React from 'react'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { createTheme, Snackbar } from '@mui/material'
+import HomeIcon from '@mui/icons-material/Home'
+import AccountBoxIcon from '@mui/icons-material/AccountBox'
+import WorkIcon from '@mui/icons-material/Work'
+import AccountTreeIcon from '@mui/icons-material/AccountTree'
+import { Fade, Slide } from 'react-awesome-reveal'
+import './styles/index.css'
+import TopNavbar from './components/nav/topNavbar.jsx'
+import BottomNavBar from './components/nav/bottomNavbar.jsx'
+import Home from './components/tabs/home.jsx'
+import About from './components/tabs/about.jsx'
+import Experience from './components/tabs/experience.jsx'
+import Projects from './components/tabs/projects.jsx'
+import renderHeader from './components/render/header.jsx'
 
 function renderMain(repos, error) {
 	createRoot(document.getElementById('root')).render(
@@ -31,7 +31,7 @@ function renderMain(repos, error) {
 function MainComponent(args) {
 
 	const [repos, setRepos] = React.useState(args.repos)
-	const [openMsg, setOpenMsg] = React.useState(args.error);
+	const [openMsg, setOpenMsg] = React.useState(args.error)
 
 	const navTheme = createTheme({
 		palette: {
@@ -42,36 +42,49 @@ function MainComponent(args) {
 				secondary: '#0af0f0',
 			}
 		},
-	});
+	})
 
 	const tabs = {
-		Home: {
+		home: {
 			ref: React.useRef(null),
+			title: "Home",
+			header: [
+				"My Name is Alan",
+				"Me Llamo Alan",
+				"Ang Pangalan ko ay Alan",
+				"Meu Nome é Alan",
+			],
 			component: (key) => { return <Home key={key} /> },
 			icon: <HomeIcon />,
 		},
-		About: {
+		about: {
 			ref: React.useRef(null),
+			title: "About",
+			header: ["About"],
 			component: (key) => { return <About key={key} /> },
 			icon: <AccountBoxIcon />,
 		},
-		Experience: {
+		experience: {
 			ref: React.useRef(null),
+			title: "Experience",
+			header: ["Experience"],
 			component: (key) => { return <Experience key={key} navTheme={navTheme} /> },
 			icon: <WorkIcon />,
 		},
-		Projects: {
+		projects: {
 			ref: React.useRef(null),
+			title: "Projects",
+			header: ["Projects"],
 			component: (key) => { return <Projects key={key} repos={repos} /> },
 			icon: <AccountTreeIcon />,
 		},
-	};
+	}
 
-	const [currTab, setTab] = React.useState("Home");
+	const [currTab, setTab] = React.useState("home")
 
 	React.useEffect(() => {
 		tabs[currTab]?.ref.current?.scrollIntoView({ behavior: 'smooth' })
-	}, [currTab]);
+	}, [currTab])
 
 	return (
 		<>
@@ -82,7 +95,7 @@ function MainComponent(args) {
 				return (
 					<div className='section-container'>
 						<div ref={tabs[tab].ref} className="section-top"></div>
-						{renderHeader(((tab !== "Home") ? `~$ ${tab}` : "~$ My name is Alan"), (tab !== "Home") ? "h2" : "h1", 20)}
+						{renderHeader(tabs[tab].header, (tab !== "home") ? "h2" : "h1", 20, (tab !== "home") ? 0 : Infinity)}
 						<div id={tab}>
 							<Slide direction="up" duration={1500} triggerOnce={true}>
 								<Fade duration={2000} triggerOnce={true}>

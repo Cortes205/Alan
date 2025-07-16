@@ -21,10 +21,10 @@ body {
 #mail:hover {
     color: #00ffaa;
 }
-#About {
+#about {
     padding-bottom: 50%;
 }
-#Experience {
+#experience {
     padding-top: 2.5%;
     padding-bottom: 20%;
 }
@@ -47,10 +47,10 @@ h2 {
     h2 {
         font-size: 2rem;
     }
-    #About {
+    #about {
         padding-bottom: 0;
     }
-    #Experience {
+    #experience {
         padding-top: 0;
         padding-bottom: 115%;
     }
