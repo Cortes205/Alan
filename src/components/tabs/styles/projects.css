@@ -35,10 +35,7 @@
 }
 .pagination-container {
     width: fit-content;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 8%;
+    padding: 8% 6% 0;
 }
 a {
     text-decoration: none;

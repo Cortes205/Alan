@@ -12,6 +12,10 @@
     padding-right: 10%;
     line-height: 15px;
 }
+.experience-dates p {
+    line-height: 25px;
+    margin-bottom: -15px;
+}
 .experience-list {
     text-align: left;
     padding-top: 15px;

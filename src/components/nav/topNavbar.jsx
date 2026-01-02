@@ -1,5 +1,5 @@
-import {ThemeProvider, Tab, Tabs} from '@mui/material'
-import './styles/topNavbar.css'
+import {ThemeProvider, Tab, Tabs} from "@mui/material"
+import "./styles/topNavbar.css"
 
 export default function TopNavbar(props) {
 	return (

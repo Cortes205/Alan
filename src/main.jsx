@@ -1,27 +1,28 @@
-import '@fontsource/roboto/300.css'
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/500.css'
-import '@fontsource/roboto/700.css'
-import * as React from 'react'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { createTheme, Snackbar } from '@mui/material'
-import HomeIcon from '@mui/icons-material/Home'
-import AccountBoxIcon from '@mui/icons-material/AccountBox'
-import WorkIcon from '@mui/icons-material/Work'
-import AccountTreeIcon from '@mui/icons-material/AccountTree'
-import { Fade, Slide } from 'react-awesome-reveal'
-import './styles/index.css'
-import TopNavbar from './components/nav/topNavbar.jsx'
-import BottomNavBar from './components/nav/bottomNavbar.jsx'
-import Home from './components/tabs/home.jsx'
-import About from './components/tabs/about.jsx'
-import Experience from './components/tabs/experience.jsx'
-import Projects from './components/tabs/projects.jsx'
-import renderHeader from './components/render/header.jsx'
+import "@fontsource/roboto/300.css"
+import "@fontsource/roboto/400.css"
+import "@fontsource/roboto/500.css"
+import "@fontsource/roboto/700.css"
+import * as React from "react"
+import Axios from "axios"
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import { createTheme, Snackbar } from "@mui/material"
+import HomeIcon from "@mui/icons-material/Home"
+import AccountBoxIcon from "@mui/icons-material/AccountBox"
+import WorkIcon from "@mui/icons-material/Work"
+import AccountTreeIcon from "@mui/icons-material/AccountTree"
+import { Fade, Slide } from "react-awesome-reveal"
+import "./styles/index.css"
+import TopNavbar from "./components/nav/topNavbar.jsx"
+import BottomNavBar from "./components/nav/bottomNavbar.jsx"
+import Home from "./components/tabs/home.jsx"
+import About from "./components/tabs/about.jsx"
+import Experience from "./components/tabs/experience.jsx"
+import Projects from "./components/tabs/projects.jsx"
+import renderHeader from "./components/render/header.jsx"
 
 function renderMain(repos, error) {
-	createRoot(document.getElementById('root')).render(
+	createRoot(document.getElementById("root")).render(
 		<StrictMode>
 			<MainComponent repos={repos} error={error} />
 		</StrictMode>,
@@ -36,10 +37,10 @@ function MainComponent(args) {
 	const navTheme = createTheme({
 		palette: {
 			primary: {
-				main: '#00ffaa',
+				main: "#00ffaa",
 			},
 			text: {
-				secondary: '#0af0f0',
+				secondary: "#0af0f0",
 			}
 		},
 	})
@@ -60,7 +61,7 @@ function MainComponent(args) {
 		about: {
 			ref: React.useRef(null),
 			title: "About",
-			header: ["About"],
+			header: ["About Me"],
 			component: (key) => { return <About key={key} /> },
 			icon: <AccountBoxIcon />,
 		},
@@ -83,7 +84,7 @@ function MainComponent(args) {
 	const [currTab, setTab] = React.useState("home")
 
 	React.useEffect(() => {
-		tabs[currTab]?.ref.current?.scrollIntoView({ behavior: 'smooth' })
+		tabs[currTab]?.ref.current?.scrollIntoView({ behavior: "smooth" })
 	}, [currTab])
 
 	return (
@@ -93,7 +94,7 @@ function MainComponent(args) {
 			{/* Render all tab components */}
 			{Object.keys(tabs).map((tab, index) => {
 				return (
-					<div className='section-container'>
+					<div key={index} className="section-container">
 						<div ref={tabs[tab].ref} className="section-top"></div>
 						{renderHeader(tabs[tab].header, (tab !== "home") ? "h2" : "h1", 20, (tab !== "home") ? 0 : Infinity)}
 						<div id={tab}>
@@ -107,7 +108,7 @@ function MainComponent(args) {
 				)
 			})}
 
-			<div className='footer'>
+			<div className="footer">
 				<p>
 					Built and Designed by Alan Cortes.<br />
 					All Rights Reserved. ©<br />
@@ -133,23 +134,20 @@ let hide = [
 	"Cortes205",
 	"Alan",
 	"Distance-Around-the-World",
+	"Wordscramble-Game",
 ]
 let error = false
 
-fetch('https://api.github.com/users/Cortes205/repos')
+Axios.get("https://api.github.com/users/Cortes205/repos")
 	.then(res => {
-		res.json().then(res => {
-			repos = res
-				.filter(repo => !hide.includes(repo.name))
-				.sort((a, b) => (Date(a.created_at) < Date(b.created_at)) ? -1 : 1)
-			renderMain(repos, error)
-		}, err => {
-			error = true
-			renderMain(repos, error)
-		})
-	}, err => {
+		repos = res.data
+			.filter(repo => !hide.includes(repo.name))
+			.sort((a, b) => (+(new Date(a.created_at)) > +(new Date(b.created_at))) ? -1 : 1)
+	})
+	.catch(err => {
+		console.log(err)
 		error = true
+	})
+	.finally(() => {
 		renderMain(repos, error)
 	})
-
-
